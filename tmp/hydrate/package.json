@@ -1,0 +1,6 @@
+{
+  "name": "ui-footer/hydrate",
+  "description": "UiFooter component hydration app.",
+  "main": "index.js",
+  "types": "index.d.ts"
+}
