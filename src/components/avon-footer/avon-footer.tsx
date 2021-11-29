@@ -1,5 +1,5 @@
 import { Component, Prop, h, State } from '@stencil/core';
-import * as Mgnl from 'nextjs-magnolia-connector';
+import { getMgnlApp } from 'nextjs-magnolia-connector';
 
 @Component({
   tag: 'avon-footer',
@@ -12,11 +12,10 @@ export class AvonFooter {
   @State() data;
 
   async componentWillLoad() {
-    console.error('asdf', Mgnl)
     if (this.content) {
       this.data = JSON.parse(decodeURIComponent(this.content));
     } else {
-      this.data = await Mgnl.getMgnlApp({
+      this.data = await getMgnlApp({
         lang: 'en',
         country: 'GB',
         endpoint: 'footer',
