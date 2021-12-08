@@ -1,0 +1,19 @@
+.footer-logo-section {
+	display: flex;
+	justify-content: center;
+}
+.footer-logo {
+    padding: 48px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+	.footer-title {
+		padding: 0 64px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	.footer-title {
+		padding: 0 20px;
+	}
+}

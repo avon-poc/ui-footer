@@ -1,0 +1,43 @@
+.footer-social-media-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media-icon {
+  padding-right: 24px;
+}
+
+.footer-payment-icon {
+  padding-right: 10px;
+}
+
+.footer-social-media-line {
+  display: none;
+}
+
+  
+  @media screen and (max-width: 540px) {
+    .footer-social-media-line {
+      display: block;
+      width: 100%;
+      margin: 32px 0px;
+    }
+    .footer-social-media-section {
+      flex-direction: column;
+      justify-content: center;
+      
+    }
+      .footer-social-media-icons {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+    }
+    .footer-payment-icons {
+       display: flex;
+         justify-content: center;
+         flex-flow: wrap;
+    }
+    
+  }
