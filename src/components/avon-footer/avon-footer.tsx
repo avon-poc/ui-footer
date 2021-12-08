@@ -22,6 +22,7 @@ export class AvonFooter {
         site: 'avon',
         resType: 'JCR',
       });
+      console.log('asdf', this.data)
       this.content = encodeURIComponent(JSON.stringify(this.data));
     }
   }
