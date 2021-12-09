@@ -26,47 +26,59 @@ export class AvonFooter {
       this.content = encodeURIComponent(JSON.stringify(this.data));
     }
   }
+
+
   render() {
     return (
       <footer class={`site-footer ${this.isDark ? 'dark' : ''}`}>
-        <div class="container">
-          <div class="row">
-            {['listItem1', 'listItem2', 'listItem3'].map(key => (
-              <div class="col" key={key}>
-                <h4>{this.data[key]?.title}</h4>
-                <ul class="footer-links">
+        <div class="footer-title">
+          <div class="footer-logo-section">
+            <span class="footer-logo" innerHTML={this.data.footerBaseSection?.imageUrl}></span>
+          </div>
+          <hr class="footer-logo-line" />
+        </div>
+        <div class="footer-list-item-section">
+          <div class="footer-list-container">
+            {['listItem1', 'listItem2', 'listItem3', 'listItem4'].map(key => (
+              <div class="col footer-list-items" key={key}>
+                <div class="footer-list-title">{this.data[key]?.title}</div>
+                <ul class="footer-list-item">
                   {this.data[key]?.data.map(item => (
-                    <li key={item['@name']}>
-                      <a href={item.listItemURL}>
-                        <div class="imgWithText">
-                          {item.imageUrl && <img src={item.imageUrl} width="32" height="32" />}
-                          <div>{item.listItemName}</div>
-                        </div>
-                      </a>
+                    <li class="footer-item" key={item['@name']}>
+                      <a class="footer-item-link" href={item.listItemURL}>{item.listItemName}</a>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-          <hr />
         </div>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <small>{this.data.footerBaseSection?.copyRightText}</small>
-            </div>
-            <div class="col">
-              <a href={this.data.footerBaseSection?.helpURL} color="#546264">
-                <small>{this.data.footerBaseSection?.helpText}</small>
-              </a>
-            </div>
-            <div class="col">
-              <a href={this.data.footerBaseSection?.tncURL} color="#546264">
-                <small>{this.data.footerBaseSection?.tncText}</small>
-              </a>
-            </div>
-          </div>
+
+        <div class="footer-social-media-section">
+          <span class="footer-social-media-icons">
+            {['listItem5'].map(key => (
+              this.data[key]?.data.map(item => (
+                <span class="social-media-icon">
+                  <a href={item.listItemURL}  innerHTML={item?.imageUrl}></a>
+                </span>
+              ))
+            ))}
+          </span>
+          <hr class="footer-social-media-line" />
+          <span class="footer-payment-icons">
+            {['listItem6'].map(key => (
+              this.data[key]?.data.map(item => (
+                <span class="footer-payment-icon">
+                  <a href={item.listItemURL}  innerHTML={item?.imageUrl}></a>
+                </span>
+              ))
+            ))}
+          </span>
+
+        </div>
+        <div class="footer-copyright">
+          <span class="footer-copyright-text"><a href="#" class="footer-copyright-link">{this.data.footerBaseSection?.copyRightText}</a></span>
+          <span class="footer-sitemap"><a href="#" class="footer-sitemap-link">{this.data.footerBaseSection?.sitemapText}</a></span>
         </div>
       </footer>
     );
