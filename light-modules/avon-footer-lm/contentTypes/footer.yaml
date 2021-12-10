@@ -1,0 +1,30 @@
+datasource:
+  workspace: footer
+  autoCreate: true
+
+model:
+  properties:
+    title1:
+      type: textField
+      label: Title
+      i18n: true
+    title2:
+      type: textField
+      label: Title
+      i18n: true
+    title3:
+      type: textField
+      label: Title
+      i18n: true
+    title4:
+      type: textField
+      label: Title
+      i18n: true
+    copyRightText:
+      type: textField
+      label: Copyright Text
+      i18n: true
+    copyRightURL:
+      type: textField
+      label: Copyright Url
+      i18n: true

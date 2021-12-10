@@ -1,0 +1,265 @@
+!content-type:footer
+icon: icon-development-app
+name: footer
+label: Footer
+
+# Optionally override any of the app configuration supplied by the content type.
+subApps:
+  detail:
+    label: Footer
+    form:
+      properties:   
+        name:
+          readOnly: false     
+        listItem1:
+          label: Add Item
+          i18n: true
+          $type: jcrMultiField
+          field:
+            $type: compositeField
+            label: Column1 Item
+            properties:
+              listItemName:
+                label: Item
+                $type: textField
+                i18n: true
+              listItemURL:
+                label: Url
+                $type: textField
+                i18n: true
+              checkbox:
+                $type: checkBoxField
+                buttonLabel: Open in new tab 
+                label: Open in new tab     
+        listItem2:
+          label: Add Item
+          i18n: true
+          $type: jcrMultiField
+          field:
+            $type: compositeField
+            label: Column2 Item
+            properties:
+              listItemName:
+                label: Item
+                $type: textField
+                i18n: true
+              listItemURL:
+                label: Url
+                $type: textField
+                i18n: true 
+              checkbox:
+                $type: checkBoxField
+                buttonLabel: Open in new tab 
+                label: Open in new tab         
+        listItem3:
+          label: Item
+          i18n: true
+          $type: jcrMultiField
+          field:
+            $type: compositeField
+            label: Column3 Item
+            properties:
+              listItemName:
+                label: Item
+                $type: textField
+                i18n: true
+              listItemURL:
+                label: Url
+                $type: textField
+                i18n: true
+              checkbox:
+                 $type: checkBoxField
+                 buttonLabel: Open in new tab 
+                 label: Open in new tab   
+        listItem4:
+          label: Item
+          i18n: true
+          $type: jcrMultiField
+          field:
+            $type: compositeField
+            label: Column4 Item
+            properties:
+              listItemName:
+                label: Item
+                $type: textField
+                i18n: true
+              listItemURL:
+                label: Url
+                $type: textField
+                i18n: true
+              checkbox:
+                $type: checkBoxField
+                buttonLabel: Open in new tab 
+                label: Open in new tab   
+        listItem5:
+          label: Social Media Plateforms
+          $type: compositeField
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            facebook:
+              $type: compositeField
+              label: Facebook
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                facebookImage:
+                  label: Facebook Icon
+                  description: Use svg tag code only
+                  $type: textField
+                  i18n: true
+                facebookURL:
+                  label: Facebook Url
+                  $type: textField
+                  i18n: true
+                checkbox:
+                  $type: checkBoxField
+                  buttonLabel: Open in new Tab  
+                  label: Open in new tab  
+            twitter:
+              $type: compositeField
+              label: Twitter
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                twitterImage:
+                  label: Twitter Icon
+                  description: Use svg tag code only
+                  $type: textField
+                  i18n: true
+                twitterURL:
+                  label: Twitter Url
+                  $type: textField
+                  i18n: true
+                checkbox:
+                  $type: checkBoxField
+                  buttonLabel: Open in new Tab 
+                  label: Open in new tab   
+            instagram:
+              $type: compositeField
+              label: Instagram
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                instagramImage:
+                  label: Instagram Icon
+                  $type: textField
+                  description: Use svg tag code only
+                  i18n: true
+                instagramURL:
+                  label: Instagram Url
+                  $type: textField
+                  i18n: true  
+                checkbox:
+                  $type: checkBoxField
+                  buttonLabel: Open in new Tab 
+                  label: Open in new tab   
+            pinterest:
+              $type: compositeField
+              label: Pinterest
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                pinterestImage:
+                  label: Pinterest Icon
+                  description: Use svg tag code only
+                  $type: textField
+                  i18n: true
+                pinterestURL:
+                  label: Pinterest Url
+                  $type: textField
+                  i18n: true 
+                checkbox:
+                  $type: checkBoxField
+                  buttonLabel: Open in new Tab
+                  label: Open in new tab                        
+        listItem6:
+          label: Payment Gateway Platforms
+          i18n: true
+          $type: jcrMultiField
+          field:
+            $type: compositeField
+            label: Payment Gateway Platforms
+            properties:
+              imageUrl:
+                label: Platform src
+                description: Use svg tag code only
+                $type: textField
+                i18n: true
+              imageLink:
+                label: Platform Redirection Link
+                $type: textField
+                i18n: true 
+              checkbox:
+                $type: checkBoxField
+                buttonLabel: Open in new tab 
+                label: Open in new tab          
+        footerBaseSection:
+          label: Footer Base Section
+          $type: compositeField
+          itemProvider:
+            $type: jcrChildNodeProvider
+          properties:
+            copyRightText:
+              label: Copy Right Text
+              $type: textField
+              i18n: true
+            imageUrl:
+              label: Logo
+              description: Use svg tag code only
+              $type: textField
+              i18n: true  
+            composite:
+              $type: compositeField
+              label: Sitemap
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                sitemapText:
+                  label: Sitemap Text
+                  $type: textField
+                  i18n: true
+                sitemapURL:
+                  label: Sitemap Url
+                  $type: textField
+                  i18n: true
+                checkbox:
+                  $type: checkBoxField
+                  buttonLabel: Open in new tab 
+                  label: Open in new tab 
+      layout:
+        $type: tabbedLayout
+        tabs:
+          firstTab:
+            label: Basic Footer Settings
+            fields:
+              - name: name
+              - name: footerBaseSection
+          secondTab:
+            label: Column 1
+            fields:
+              - name: title1
+              - name: listItem1
+          thirdTab:
+            label: Column 2
+            fields:
+              - name: title2
+              - name: listItem2
+          fourthTab:
+            label: Column 3
+            fields:
+              - name: title3
+              - name: listItem3
+          fifthTab:
+            label: Column 4
+            fields:
+              - name: title4
+              - name: listItem4
+          sixthTab:
+            label: Social Media 
+            fields:  
+             - name: listItem5
+          seventhTab:
+            label: Payment
+            fields:  
+             - name: listItem6     
