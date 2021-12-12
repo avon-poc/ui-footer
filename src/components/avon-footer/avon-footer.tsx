@@ -33,7 +33,9 @@ export class AvonFooter {
       <footer class={`site-footer ${this.isDark ? 'dark' : ''}`}>
         <div class="footer-title">
           <div class="footer-logo-section">
-            <span class="footer-logo" innerHTML={this.data.footerBaseSection?.imageUrl}></span>
+          {["footerBaseSection"].map(key => (
+            <span class="footer-logo" innerHTML={this.data.footerBaseSection.data[2].footerLogo}></span>
+          ))}
           </div>
           <hr class="footer-logo-line" />
         </div>
@@ -59,7 +61,7 @@ export class AvonFooter {
             {['listItem5'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="social-media-icon">
-                  <a href={item.listItemURL}  innerHTML={item?.imageUrl}></a>
+                  <a href={item.itemURL}  innerHTML={item?.itemImage}></a>
                 </span>
               ))
             ))}
@@ -69,7 +71,7 @@ export class AvonFooter {
             {['listItem6'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="footer-payment-icon">
-                  <a href={item.listItemURL}  innerHTML={item?.imageUrl}></a>
+                  <a href={item.imageLink}  innerHTML={item?.imageUrl}></a>
                 </span>
               ))
             ))}
@@ -77,8 +79,8 @@ export class AvonFooter {
 
         </div>
         <div class="footer-copyright">
-          <span class="footer-copyright-text"><a href="#" class="footer-copyright-link">{this.data.footerBaseSection?.copyRightText}</a></span>
-          <span class="footer-sitemap"><a href="#" class="footer-sitemap-link">{this.data.footerBaseSection?.sitemapText}</a></span>
+          <span class="footer-copyright-text"><a href="#" class="footer-copyright-link">{this.data.footerBaseSection.data[1].copyRightText}</a></span>
+          <span class="footer-sitemap"><a href="#" class="footer-sitemap-link">{this.data.footerBaseSection.data[0].sitemapText}</a></span>
         </div>
       </footer>
     );
