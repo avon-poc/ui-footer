@@ -47,8 +47,13 @@ export class AvonFooter {
                 <ul class="footer-list-item">
                   {this.data[key]?.data.map(item => (
                     <li class="footer-item" key={item['@name']}>
-                      <a class="footer-item-link" href={item.listItemURL}>{item.listItemName}</a>
-                    </li>
+                     {item.listItemCheckbox ?
+                     <a class="footer-item-link" href={item.listItemURL}   target="_blank">{item.listItemName}</a>
+                     :
+                     <a class="footer-item-link" href={item.listItemURL}   target="_self">{item.listItemName}</a>
+                     }
+                     
+                      </li>
                   ))}
                 </ul>
               </div>
