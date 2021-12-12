@@ -27,7 +27,7 @@ subApps:
                 label: Url
                 $type: textField
                 i18n: true
-              checkbox:
+              listItemCheckbox:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab     
@@ -47,7 +47,7 @@ subApps:
                 label: Url
                 $type: textField
                 i18n: true 
-              checkbox:
+              listItemCheckbox:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab         
@@ -67,7 +67,7 @@ subApps:
                 label: Url
                 $type: textField
                 i18n: true
-              checkbox:
+              listItemCheckbox:
                  $type: checkBoxField
                  buttonLabel: Open in new tab 
                  label: Open in new tab   
@@ -87,7 +87,7 @@ subApps:
                 label: Url
                 $type: textField
                 i18n: true
-              checkbox:
+              listItemCheckbox:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab   
@@ -103,16 +103,16 @@ subApps:
               itemProvider:
                 $type: jcrChildNodeProvider
               properties:
-                facebookImage:
+                itemImage:
                   label: Facebook Icon
                   description: Use svg tag code only
                   $type: textField
                   i18n: true
-                facebookURL:
+                itemURL:
                   label: Facebook Url
                   $type: textField
                   i18n: true
-                checkbox:
+                itemCheckbox:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab  
                   label: Open in new tab  
@@ -122,16 +122,16 @@ subApps:
               itemProvider:
                 $type: jcrChildNodeProvider
               properties:
-                twitterImage:
+                itemImage:
                   label: Twitter Icon
                   description: Use svg tag code only
                   $type: textField
                   i18n: true
-                twitterURL:
+                itemURL:
                   label: Twitter Url
                   $type: textField
                   i18n: true
-                checkbox:
+                itemCheckbox:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab 
                   label: Open in new tab   
@@ -141,16 +141,16 @@ subApps:
               itemProvider:
                 $type: jcrChildNodeProvider
               properties:
-                instagramImage:
+                itemImage:
                   label: Instagram Icon
                   $type: textField
                   description: Use svg tag code only
                   i18n: true
-                instagramURL:
+                itemURL:
                   label: Instagram Url
                   $type: textField
                   i18n: true  
-                checkbox:
+                itemCheckbox:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab 
                   label: Open in new tab   
@@ -160,16 +160,16 @@ subApps:
               itemProvider:
                 $type: jcrChildNodeProvider
               properties:
-                pinterestImage:
+                itemImage:
                   label: Pinterest Icon
                   description: Use svg tag code only
                   $type: textField
                   i18n: true
-                pinterestURL:
+                itemURL:
                   label: Pinterest Url
                   $type: textField
                   i18n: true 
-                checkbox:
+                itemCheckbox:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab
                   label: Open in new tab                        
@@ -190,7 +190,7 @@ subApps:
                 label: Platform Redirection Link
                 $type: textField
                 i18n: true 
-              checkbox:
+              itemCheckbox:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab          
@@ -200,16 +200,7 @@ subApps:
           itemProvider:
             $type: jcrChildNodeProvider
           properties:
-            copyRightText:
-              label: Copy Right Text
-              $type: textField
-              i18n: true
-            imageUrl:
-              label: Logo
-              description: Use svg tag code only
-              $type: textField
-              i18n: true  
-            composite:
+            sitemap:
               $type: compositeField
               label: Sitemap
               itemProvider:
@@ -223,10 +214,31 @@ subApps:
                   label: Sitemap Url
                   $type: textField
                   i18n: true
-                checkbox:
+                sitemapCheckbox:
                   $type: checkBoxField
                   buttonLabel: Open in new tab 
                   label: Open in new tab 
+            copyright:
+              $type: compositeField
+              label: Copyright
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                copyRightText:
+                  label: Copyright Text
+                  $type: textField
+                  i18n: true
+            footerLogo:
+              $type: compositeField
+              label: Footer Logo
+              itemProvider:
+                $type: jcrChildNodeProvider
+              properties:
+                footerLogo:
+                  label: Footer Logo 
+                  $type: textField
+                  i18n: true      
+                     
       layout:
         $type: tabbedLayout
         tabs:
