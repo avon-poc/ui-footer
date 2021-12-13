@@ -11,7 +11,7 @@ subApps:
       properties:   
         name:
           readOnly: false     
-        listItem1:
+        footerList1:
           label: Add Item
           i18n: true
           $type: jcrMultiField
@@ -31,7 +31,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab     
-        listItem2:
+        footerList2:
           label: Add Item
           i18n: true
           $type: jcrMultiField
@@ -51,7 +51,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab         
-        listItem3:
+        footerList3:
           label: Item
           i18n: true
           $type: jcrMultiField
@@ -71,7 +71,7 @@ subApps:
                  $type: checkBoxField
                  buttonLabel: Open in new tab 
                  label: Open in new tab   
-        listItem4:
+        footerList4:
           label: Item
           i18n: true
           $type: jcrMultiField
@@ -91,7 +91,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab   
-        listItem5:
+        socialMediaIcons:
           label: Social Media Plateforms
           $type: compositeField
           itemProvider:
@@ -173,7 +173,7 @@ subApps:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab
                   label: Open in new tab                        
-        listItem6:
+        paymentGatewayList:
           label: Payment Gateway Platforms
           i18n: true
           $type: jcrMultiField
@@ -270,8 +270,8 @@ subApps:
           sixthTab:
             label: Social Media 
             fields:  
-             - name: listItem5
+             - name: socialMediaIcons
           seventhTab:
             label: Payment
             fields:  
-             - name: listItem6     
+             - name: paymentGatewayList     
