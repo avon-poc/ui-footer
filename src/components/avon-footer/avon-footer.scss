@@ -224,7 +224,7 @@
 			display: flex;
 			justify-content: initial;
 			flex-flow: wrap;
-			margin: 0 54px;
+			margin: 0 44px;
 		}
 
 		.footer-payment-icon {
@@ -250,7 +250,29 @@
 		}
 	}
 
-	/*-------------------------------------------------*/
+  @media screen and (max-width: 420px) {
+    .footer-payment-icons {
+      margin: 0 72px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    .footer-payment-icons {
+      margin: 0 48px;
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    .footer-payment-icons {
+      margin: 0 28px;
+    }
+  }
+
+  @media screen and (max-width: 280px) {
+    .footer-payment-icons {
+      margin: 0 36px;
+    }
+  }
 	.container {
 		box-sizing: border-box;
 		width: 100%;

@@ -16,10 +16,9 @@ export class AvonFooter {
       this.data = JSON.parse(decodeURIComponent(this.content));
     } else {
       this.data = await getMgnlApp({
-        lang: 'en',
-        country: 'GB',
+        lang: 'RO',
+        country: 'RO',
         endpoint: 'footer',
-        site: 'avon',
         resType: 'JCR',
       });
       console.log('asdf', this.data)
@@ -47,12 +46,7 @@ export class AvonFooter {
                 <ul class="footer-list-item">
                   {this.data[key]?.data.map(item => (
                     <li class="footer-item" key={item['@name']}>
-                      {item.listItemCheckbox ?
-                        <a class="footer-item-link" href={item.listItemURL} target="_blank">{item.listItemName}</a>
-                        :
-                        <a class="footer-item-link" href={item.listItemURL} target="_self">{item.listItemName}</a>
-                      }
-
+                      <a class="footer-item-link" href={item.listItemURL} target={item.listItemCheckbox== "true"? '_blank':'_self'}>{item.listItemName}</a>
                     </li>
                   ))}
                 </ul>
@@ -66,7 +60,7 @@ export class AvonFooter {
             {['listItem5'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="social-media-icon">
-                  <a href={item.itemURL} innerHTML={item?.itemImage}></a>
+                  <a target={item.itemCheckbox== "true"? '_blank':'_self'} href={item.itemURL} innerHTML={item?.itemImage}></a>
                 </span>
               ))
             ))}
@@ -76,7 +70,7 @@ export class AvonFooter {
             {['listItem6'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="footer-payment-icon">
-                  <a href={item.imageLink} innerHTML={item?.imageUrl}></a>
+                  <a href={item.imageLink} innerHTML={item?.imageUrl} target={item.itemCheckbox== "true"? '_blank':'_self'}></a>
                 </span>
               ))
             ))}
@@ -84,8 +78,8 @@ export class AvonFooter {
 
         </div>
         <div class="footer-copyright">
-          <span class="footer-copyright-text"><a href="#" class="footer-copyright-link">{this.data.footerBaseSection.data[1].copyRightText}</a></span>
-          <span class="footer-sitemap"><a href="#" class="footer-sitemap-link">{this.data.footerBaseSection.data[0].sitemapText}</a></span>
+          <span class="footer-copyright-text"><a class="footer-copyright-link">{this.data.footerBaseSection.data[1].copyRightText}</a></span>
+          <span class="footer-sitemap"><a href={this.data.footerBaseSection.data[0].sitemapURL} target={this.data.footerBaseSection.data[0].sitemapCheckbox== "true"? '_blank':'_self'}  class="footer-sitemap-link">{this.data.footerBaseSection.data[0].sitemapText}</a></span>
         </div>
       </footer>
     );
