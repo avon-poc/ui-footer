@@ -11,7 +11,7 @@ subApps:
       properties:   
         name:
           readOnly: false     
-        footerList1:
+        listItem1:
           label: Add Item
           i18n: true
           $type: jcrMultiField
@@ -31,7 +31,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab     
-        footerList2:
+        listItem2:
           label: Add Item
           i18n: true
           $type: jcrMultiField
@@ -51,7 +51,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab         
-        footerList3:
+        listItem3:
           label: Item
           i18n: true
           $type: jcrMultiField
@@ -71,7 +71,7 @@ subApps:
                  $type: checkBoxField
                  buttonLabel: Open in new tab 
                  label: Open in new tab   
-        footerList4:
+        listItem4:
           label: Item
           i18n: true
           $type: jcrMultiField
@@ -91,7 +91,7 @@ subApps:
                 $type: checkBoxField
                 buttonLabel: Open in new tab 
                 label: Open in new tab   
-        socialMediaIcons:
+        socialMediaIconList:
           label: Social Media Plateforms
           $type: compositeField
           itemProvider:
@@ -173,7 +173,7 @@ subApps:
                   $type: checkBoxField
                   buttonLabel: Open in new Tab
                   label: Open in new tab                        
-        paymentGatewayList:
+        paymentGatwayList:
           label: Payment Gateway Platforms
           i18n: true
           $type: jcrMultiField
@@ -238,7 +238,6 @@ subApps:
                   label: Footer Logo 
                   $type: textField
                   i18n: true      
-                     
       layout:
         $type: tabbedLayout
         tabs:
@@ -270,8 +269,8 @@ subApps:
           sixthTab:
             label: Social Media 
             fields:  
-             - name: socialMediaIcons
+             - name: socialMediaIconList
           seventhTab:
             label: Payment
             fields:  
-             - name: paymentGatewayList     
+             - name: paymentGatwayList     
