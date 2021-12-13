@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
-    "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.1.tgz"
+    "nextjs-magnolia-connector": "file:nextjs-magnolia-connector-v0.1.2.tgz"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
