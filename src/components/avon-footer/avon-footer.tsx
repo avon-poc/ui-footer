@@ -33,9 +33,9 @@ export class AvonFooter {
       <footer class={`site-footer ${this.isDark ? 'dark' : ''}`}>
         <div class="footer-title">
           <div class="footer-logo-section">
-          {["footerBaseSection"].map(key => (
-            <span class="footer-logo" innerHTML={this.data.footerBaseSection.data[2].footerLogo}></span>
-          ))}
+            {["footerBaseSection"].map(key => (
+              <span class="footer-logo" key={key} innerHTML={this.data.footerBaseSection.data[2].footerLogo}></span>
+            ))}
           </div>
           <hr class="footer-logo-line" />
         </div>
@@ -47,13 +47,13 @@ export class AvonFooter {
                 <ul class="footer-list-item">
                   {this.data[key]?.data.map(item => (
                     <li class="footer-item" key={item['@name']}>
-                     {item.listItemCheckbox ?
-                     <a class="footer-item-link" href={item.listItemURL}   target="_blank">{item.listItemName}</a>
-                     :
-                     <a class="footer-item-link" href={item.listItemURL}   target="_self">{item.listItemName}</a>
-                     }
-                     
-                      </li>
+                      {item.listItemCheckbox ?
+                        <a class="footer-item-link" href={item.listItemURL} target="_blank">{item.listItemName}</a>
+                        :
+                        <a class="footer-item-link" href={item.listItemURL} target="_self">{item.listItemName}</a>
+                      }
+
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -66,7 +66,7 @@ export class AvonFooter {
             {['listItem5'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="social-media-icon">
-                  <a href={item.itemURL}  innerHTML={item?.itemImage}></a>
+                  <a href={item.itemURL} innerHTML={item?.itemImage}></a>
                 </span>
               ))
             ))}
@@ -76,7 +76,7 @@ export class AvonFooter {
             {['listItem6'].map(key => (
               this.data[key]?.data.map(item => (
                 <span class="footer-payment-icon">
-                  <a href={item.imageLink}  innerHTML={item?.imageUrl}></a>
+                  <a href={item.imageLink} innerHTML={item?.imageUrl}></a>
                 </span>
               ))
             ))}
